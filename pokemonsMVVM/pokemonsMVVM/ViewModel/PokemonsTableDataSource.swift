@@ -7,12 +7,11 @@
 
 import UIKit
 
-class PokemonsTableDataSource<CELL: UITableViewCell, T> : NSObject, UITableViewDataSource, UITableViewDelegate {
+class PokemonsTableDataSource<CELL: UITableViewCell, T> : NSObject, UITableViewDataSource {
     
     private let cellId: String!
     private var items: [T]!
     var configureCell: (CELL, T) -> () = {_,_ in }
-    var pokemonsViewModel: PokemonsViewModel!
     
     init(cellId: String, items: [T], configureCell: @escaping (CELL, T) -> ()) {
         self.cellId = cellId

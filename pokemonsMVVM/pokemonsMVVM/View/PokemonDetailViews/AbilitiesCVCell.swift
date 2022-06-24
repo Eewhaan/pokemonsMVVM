@@ -25,15 +25,17 @@ class AbilitiesCVCell: UICollectionViewCell {
         self.addSubview(nameLabel)
         
         nameLabel.snp.makeConstraints { make in
-            make.top.bottom.leading.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(AbilitiesCellConstants.topAndBottomInset)
+            make.leading.trailing.equalToSuperview().inset(AbilitiesCellConstants.leadingAndTrailingInset)
         }
     }
     
-    func configure() {
+    func loadSetup(abilities: [Ability], index: Int) {
         nameLabel.layer.backgroundColor = AbilitiesCellConstants.cvCellBackgroundColor
         nameLabel.layer.cornerRadius = AbilitiesCellConstants.cvCellCornerRadius
         nameLabel.textAlignment = .center
         nameLabel.textColor = AbilitiesCellConstants.cvCellTextColor
         nameLabel.font = AbilitiesCellConstants.font
+        nameLabel.text = abilities[index].ability.name.capitalized
     }
 }

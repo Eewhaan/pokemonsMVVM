@@ -24,6 +24,7 @@ class AvatarCell: UITableViewCell {
     private func setupViews() {
         avatarImageView = UIImageView()
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        avatarImageView.contentMode = UIView.ContentMode.scaleAspectFit
         self.addSubview(avatarImageView)
         
         avatarImageView.snp.makeConstraints { make in
@@ -34,11 +35,15 @@ class AvatarCell: UITableViewCell {
         }
     }
     
-    func configure() {
+    func loadSetup(details: PokemonDetails) {
         avatarImageView.layer.cornerRadius = AvatarCellConstants.cornerRadius
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.backgroundColor = AvatarCellConstants.backgroundColor
         avatarImageView.layer.borderColor = AvatarCellConstants.borderColor
         avatarImageView.layer.borderWidth = AvatarCellConstants.borderWidth
+        
+        if let url = URL(string: details.sprites.front_default) {
+            avatarImageView.load(url: url)
+        }
     }
 }

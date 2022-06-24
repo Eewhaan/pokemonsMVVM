@@ -12,6 +12,7 @@ class AbilitiesCell: UITableViewCell {
     
     var abilitiesCollectionView: AbilitiesCollectionView!
     var abilityLabel: UILabel!
+    var abilities = [Ability]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,8 +24,11 @@ class AbilitiesCell: UITableViewCell {
     }
     
     func setupViews() {
-        abilitiesCollectionView = AbilitiesCollectionView()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        abilitiesCollectionView = AbilitiesCollectionView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: self.contentView.frame.size), collectionViewLayout: layout)
         abilitiesCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        abilitiesCollectionView.setup(parent: self)
         self.addSubview(abilitiesCollectionView)
         
         abilityLabel = UILabel()
@@ -34,20 +38,22 @@ class AbilitiesCell: UITableViewCell {
         abilityLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.width.equalToSuperview().multipliedBy(AbilitiesCellConstants.abilityLabelMultiplier)
         }
         
         abilitiesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(abilityLabel.snp.bottom)
-            make.height.equalToSuperview().multipliedBy(0.7)
+            make.height.equalToSuperview().multipliedBy(AbilitiesCellConstants.collectionViewMultiplier)
             make.trailing.leading.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
     
-    func configure() {
+    func loadSetup(abilities: [Ability]) {
         self.abilityLabel.font = AbilitiesCellConstants.font
         self.abilityLabel.textAlignment = .center
+        self.abilityLabel.text = AbilitiesCellConstants.abilityLabelText
         self.abilitiesCollectionView.setup(parent: self)
+        self.abilities = abilities
     }
 }

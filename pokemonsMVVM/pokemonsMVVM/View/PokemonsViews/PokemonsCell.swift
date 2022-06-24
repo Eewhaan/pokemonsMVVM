@@ -34,22 +34,25 @@ class PokemonsCell: UITableViewCell {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview().inset(8)
+            make.leading.equalToSuperview().inset(PokemonsCellConstants.labelBottomAndLeadingInset)
             make.centerX.equalToSuperview()
         }
         
         detailLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).inset(4)
-            make.bottom.leading.equalToSuperview().inset(8)
+            make.top.equalTo(nameLabel.snp.bottom).inset(PokemonsCellConstants.labelTopInset)
+            make.bottom.leading.equalToSuperview().inset(PokemonsCellConstants.labelBottomAndLeadingInset)
             make.width.lessThanOrEqualToSuperview()
         }
     }
     
-    func loadSetup() {
+    func loadSetup(pokemon: Pokemon) {
         self.nameLabel.font = UIFont(name: PokemonsCellConstants.font, size: PokemonsCellConstants.nameFontSize)
         self.detailLabel.font = UIFont(name: PokemonsCellConstants.font, size: PokemonsCellConstants.nameFontSize)
         self.detailLabel.textColor = PokemonsCellConstants.detailTextColor
         self.detailLabel.layer.backgroundColor = PokemonsCellConstants.detailBackgroundColor
         self.detailLabel.layer.cornerRadius = PokemonsCellConstants.detailCornerRadius
+        
+        self.detailLabel.text = pokemon.name.capitalized
+        self.nameLabel.text = pokemon.name.capitalized
     }
 }

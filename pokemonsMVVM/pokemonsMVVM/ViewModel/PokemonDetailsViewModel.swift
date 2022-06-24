@@ -9,7 +9,11 @@ import UIKit
 
 class PokemonDetailsViewModel: NSObject {
     
-    var selectedPokemon: Pokemon?
+    var selectedPokemonURL: String? {
+        didSet {
+            self.fetchPokemonDetails()
+        }
+    }
     private (set) var pokemonDetails: PokemonDetails! {
         didSet {
             self.bindPokemonDetailToController()
@@ -22,10 +26,13 @@ class PokemonDetailsViewModel: NSObject {
         super.init()
         fetchPokemonDetails()
     }
+
     
     func fetchPokemonDetails() {
-        guard let selectedPokemon = selectedPokemon else { return }
-        DataService.shared.getPokemonDetail(pokemonUrl: selectedPokemon.url) { details in
+        guard let selectedPokemonURL = selectedPokemonURL else {
+            return
+        }
+        DataService.shared.getPokemonDetail(pokemonUrl: selectedPokemonURL) { details in
             self.pokemonDetails = details
         }
     }

@@ -21,6 +21,10 @@ class InfoCell: UITableViewCell {
         fatalError("Unable to initialize InfoCell")
     }
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     private func setupViews() {
         detailLabel = UILabel()
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -32,21 +36,31 @@ class InfoCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints{ make in
             make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().inset(8)
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.leading.equalToSuperview().inset(InfoCellConstants.leadingAndTrailingInset)
+            make.width.equalToSuperview().multipliedBy(InfoCellConstants.titleLabelMultiplier)
         }
         detailLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(titleLabel.snp.centerX)
-            make.height.equalTo(titleLabel.snp.height)
-            make.trailing.equalToSuperview().inset(-8)
-            make.width.equalToSuperview().multipliedBy(0.4)
+            make.centerY.equalTo(titleLabel.snp.centerY)
+            make.trailing.equalToSuperview().inset(InfoCellConstants.leadingAndTrailingInset)
+            make.width.equalToSuperview().multipliedBy(InfoCellConstants.detailLabelMultiplier)
         }
     }
     
-    func configure() {
+    func loadSetup(details: PokemonDetails, index: Int) {
         self.titleLabel.font = UIFont(name: InfoCellConstants.titleFont, size: InfoCellConstants.fontSize)
         self.titleLabel.textAlignment = .left
         self.detailLabel.font = UIFont(name: InfoCellConstants.detailFont, size: InfoCellConstants.fontSize)
         self.detailLabel.textAlignment = .center
+        
+        switch index {
+        case 1:
+            self.titleLabel.text = InfoCellConstants.nameString
+            self.detailLabel.text = details.name.capitalized
+        case 2:
+            self.titleLabel.text = InfoCellConstants.baseXpString
+            self.detailLabel.text = String(describing: details.base_experience)
+        default:
+            break
+        }
     }
 }
