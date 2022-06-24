@@ -8,13 +8,10 @@
 import UIKit
 
 class AbilitiesCollectionView: UICollectionView {
-    
+        
     func setup(parent: AbilitiesCell) {
         self.delegate = parent
         self.dataSource = parent
         self.register(AbilitiesCVCell.self, forCellWithReuseIdentifier: AbilitiesCellConstants.collectionViewCellId)
-        if let layout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .vertical
-        }
     }
 }

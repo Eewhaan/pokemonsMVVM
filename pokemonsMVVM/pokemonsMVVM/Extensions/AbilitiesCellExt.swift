@@ -11,14 +11,16 @@ import UIKit
 extension AbilitiesCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return abilities.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AbilitiesCellConstants.collectionViewCellId, for: indexPath) as? AbilitiesCVCell else { return UICollectionViewCell() }
+        cell.loadSetup(abilities: self.abilities, index: indexPath.row)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 60)
+        return CGSize(width: collectionView.frame.width/AbilitiesCellConstants.divider, height: AbilitiesCellConstants.collectionViewRowHeight)
     }
 }

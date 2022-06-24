@@ -23,7 +23,7 @@
 		DB24B33B2863203800351D0C /* PokemonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B33A2863203800351D0C /* PokemonDetails.swift */; };
 		DB24B33D2863207B00351D0C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B33C2863207B00351D0C /* APIError.swift */; };
 		DB24B33F286320B900351D0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B33E286320B900351D0C /* Constants.swift */; };
-		DB24B3432863237E00351D0C /* PokemonDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B3422863237E00351D0C /* PokemonDetailController.swift */; };
+		DB24B3432863237E00351D0C /* PokemonDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B3422863237E00351D0C /* PokemonDetailsController.swift */; };
 		DB24B345286324AA00351D0C /* PokemonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B344286324AA00351D0C /* PokemonsViewModel.swift */; };
 		DB24B3472863254D00351D0C /* PokemonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B3462863254D00351D0C /* PokemonDetailsViewModel.swift */; };
 		DB24B34B286339BB00351D0C /* PokemonsTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB24B34A286339BB00351D0C /* PokemonsTableDataSource.swift */; };
@@ -36,6 +36,8 @@
 		DBB736842864660D00E6AD80 /* AbilitiesCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB736832864660D00E6AD80 /* AbilitiesCellExt.swift */; };
 		DBB73688286466F300E6AD80 /* AbilitiesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB73687286466F300E6AD80 /* AbilitiesCollectionView.swift */; };
 		DBB7368A286467A500E6AD80 /* AbilitiesCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB73689286467A500E6AD80 /* AbilitiesCVCell.swift */; };
+		DBB7368E2864776400E6AD80 /* PokemonDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7368D2864776400E6AD80 /* PokemonDetailsDataSource.swift */; };
+		DBB736902864A6E800E6AD80 /* TableForPokemonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7368F2864A6E800E6AD80 /* TableForPokemonDetails.swift */; };
 		EDEE3A69B03062C776B15FB8 /* Pods_pokemonsMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523FF37F5895338BD31CC422 /* Pods_pokemonsMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +85,7 @@
 		DB24B33A2863203800351D0C /* PokemonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetails.swift; sourceTree = "<group>"; };
 		DB24B33C2863207B00351D0C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		DB24B33E286320B900351D0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		DB24B3422863237E00351D0C /* PokemonDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailController.swift; sourceTree = "<group>"; };
+		DB24B3422863237E00351D0C /* PokemonDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsController.swift; sourceTree = "<group>"; };
 		DB24B344286324AA00351D0C /* PokemonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsViewModel.swift; sourceTree = "<group>"; };
 		DB24B3462863254D00351D0C /* PokemonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewModel.swift; sourceTree = "<group>"; };
 		DB24B34A286339BB00351D0C /* PokemonsTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsTableDataSource.swift; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		DBB736832864660D00E6AD80 /* AbilitiesCellExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesCellExt.swift; sourceTree = "<group>"; };
 		DBB73687286466F300E6AD80 /* AbilitiesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesCollectionView.swift; sourceTree = "<group>"; };
 		DBB73689286467A500E6AD80 /* AbilitiesCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesCVCell.swift; sourceTree = "<group>"; };
+		DBB7368D2864776400E6AD80 /* PokemonDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsDataSource.swift; sourceTree = "<group>"; };
+		DBB7368F2864A6E800E6AD80 /* TableForPokemonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableForPokemonDetails.swift; sourceTree = "<group>"; };
 		DEEAC12A5123A189853EC20F /* Pods-pokemonsMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonsMVVMTests.debug.xcconfig"; path = "Target Support Files/Pods-pokemonsMVVMTests/Pods-pokemonsMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,8 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				DB24B30528631D4300351D0C /* PokemonsViewController.swift */,
+				DB24B3422863237E00351D0C /* PokemonDetailsController.swift */,
 				DBB7368C28646D8400E6AD80 /* PokemonsViews */,
-				DB24B3422863237E00351D0C /* PokemonDetailController.swift */,
 				DBB7368B28646D4600E6AD80 /* PokemonDetailViews */,
 			);
 			path = View;
@@ -242,6 +246,7 @@
 			children = (
 				DB24B344286324AA00351D0C /* PokemonsViewModel.swift */,
 				DB24B34A286339BB00351D0C /* PokemonsTableDataSource.swift */,
+				DBB7368D2864776400E6AD80 /* PokemonDetailsDataSource.swift */,
 				DB24B3462863254D00351D0C /* PokemonDetailsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -267,6 +272,7 @@
 		DBB7368B28646D4600E6AD80 /* PokemonDetailViews */ = {
 			isa = PBXGroup;
 			children = (
+				DBB7368F2864A6E800E6AD80 /* TableForPokemonDetails.swift */,
 				DB24B3502863606D00351D0C /* AvatarCell.swift */,
 				DB24B3522863609400351D0C /* InfoCell.swift */,
 				DB24B354286360A900351D0C /* AbilitiesCell.swift */,
@@ -526,13 +532,15 @@
 			files = (
 				DBB73682286465E900E6AD80 /* ImageViewExt.swift in Sources */,
 				DB24B30628631D4300351D0C /* PokemonsViewController.swift in Sources */,
+				DBB736902864A6E800E6AD80 /* TableForPokemonDetails.swift in Sources */,
 				DBB736842864660D00E6AD80 /* AbilitiesCellExt.swift in Sources */,
 				DB24B34D28633B9B00351D0C /* PokemonsCell.swift in Sources */,
 				DB24B30228631D4300351D0C /* AppDelegate.swift in Sources */,
+				DBB7368E2864776400E6AD80 /* PokemonDetailsDataSource.swift in Sources */,
 				DB24B33B2863203800351D0C /* PokemonDetails.swift in Sources */,
 				DB24B3512863606D00351D0C /* AvatarCell.swift in Sources */,
 				DB24B3532863609400351D0C /* InfoCell.swift in Sources */,
-				DB24B3432863237E00351D0C /* PokemonDetailController.swift in Sources */,
+				DB24B3432863237E00351D0C /* PokemonDetailsController.swift in Sources */,
 				DBB73688286466F300E6AD80 /* AbilitiesCollectionView.swift in Sources */,
 				DBB7368A286467A500E6AD80 /* AbilitiesCVCell.swift in Sources */,
 				DB24B33928631FF900351D0C /* Pokemons.swift in Sources */,
@@ -728,7 +736,6 @@
 				INFOPLIST_FILE = pokemonsMVVM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -756,7 +763,6 @@
 				INFOPLIST_FILE = pokemonsMVVM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

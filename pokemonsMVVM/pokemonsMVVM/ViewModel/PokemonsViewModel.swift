@@ -7,15 +7,16 @@
 
 import UIKit
 
+
 class PokemonsViewModel: NSObject {
     
+    private var pokemonDetailsViewModel: PokemonDetailsViewModel!
     private (set) var pokemonsData = [Pokemon]() {
         didSet {
             self.bindPokemonsVMToController()
         }
     }
     private var offset = 0
-    
     var bindPokemonsVMToController: (()->()) = {}
     
     override init() {
@@ -36,5 +37,6 @@ class PokemonsViewModel: NSObject {
             }
         }
     }
+    
 
 }

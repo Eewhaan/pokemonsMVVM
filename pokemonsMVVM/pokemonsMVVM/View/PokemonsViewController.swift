@@ -28,6 +28,13 @@ class PokemonsViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedPokemon = pokemonsViewModel.pokemonsData[indexPath.row]
+        let vc = PokemonDetailsController(nibName: nil, bundle: nil)
+        vc.selectedPokemon = selectedPokemon.url
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func callPokemonVMForUIUpdate() {
         self.pokemonsViewModel = PokemonsViewModel()
         self.pokemonsViewModel.bindPokemonsVMToController = {
@@ -38,9 +45,7 @@ class PokemonsViewController: UIViewController, UITableViewDelegate {
     
     func updateTableData() {
         self.pokemonsTableDataSource = PokemonsTableDataSource(cellId: PokemonsVCConstants.cellId, items: self.pokemonsViewModel.pokemonsData, configureCell: { cell, pokemon in
-            cell.nameLabel.text = pokemon.name.capitalized
-            cell.detailLabel.text = pokemon.name.capitalized
-            cell.loadSetup()
+            cell.loadSetup(pokemon: pokemon)
         })
         
         DispatchQueue.main.async { [weak self] in
