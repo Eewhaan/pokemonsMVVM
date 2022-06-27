@@ -32,8 +32,13 @@ class PokemonDetailsViewModel: NSObject {
         guard let selectedPokemonURL = selectedPokemonURL else {
             return
         }
-        DataService.shared.getPokemonDetail(pokemonUrl: selectedPokemonURL) { details in
-            self.pokemonDetails = details
+        DataService.shared.getData(perPage: nil, offset: nil, urlString: selectedPokemonURL) { (result:Result<PokemonDetails, APIError>) in
+            switch result {
+            case .success(let details):
+                self.pokemonDetails = details
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
 

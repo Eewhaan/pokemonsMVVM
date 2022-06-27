@@ -12,8 +12,7 @@ class PokemonsTableView: UITableView {
     
     func setupTable(delegate: PokemonsViewController) {
         self.delegate = delegate
-        self.register(PokemonsCell.self, forCellReuseIdentifier: PokemonsVCConstants.cellId)
-        self.rowHeight = PokemonsVCConstants.tableRowHeight
+        self.register(PokemonsCell.self, forCellReuseIdentifier: Identifiers.pokemonCell)
     }
 
 }

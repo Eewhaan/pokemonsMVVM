@@ -29,16 +29,16 @@ class PokemonDetailsDataSource<T>: NSObject, UITableViewDataSource {
         var cell = UITableViewCell()
         switch indexPath.row {
         case 0:
-            guard let avatarCell = tableView.dequeueReusableCell(withIdentifier: AvatarCellConstants.cellId, for: indexPath) as? AvatarCell else { return cell }
+            guard let avatarCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.avatarCell, for: indexPath) as? AvatarCell else { return cell }
             self.configureAvatarCell(avatarCell, details)
             cell = avatarCell
         case 1..<3:
-            guard let infoCell = tableView.dequeueReusableCell(withIdentifier: InfoCellConstants.cellId, for: indexPath) as? InfoCell else { return cell }
+            guard let infoCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.infoCell, for: indexPath) as? InfoCell else { return cell }
             let index = indexPath.row
             self.configureInfoCell(infoCell, details, index)
             cell = infoCell
         case 3:
-            guard let abilitiesCell = tableView.dequeueReusableCell(withIdentifier: AbilitiesCellConstants.tableViewCellId, for: indexPath) as? AbilitiesCell else { return cell }
+            guard let abilitiesCell = tableView.dequeueReusableCell(withIdentifier: Identifiers.abilitiesCell, for: indexPath) as? AbilitiesCell else { return cell }
             self.configureAbilitiesCell(abilitiesCell, details)
             cell = abilitiesCell
         default:

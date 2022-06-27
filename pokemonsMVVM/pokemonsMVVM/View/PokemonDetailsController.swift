@@ -31,9 +31,9 @@ class PokemonDetailsController: UIViewController, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return AvatarCellConstants.rowHeight
+            return Dimensions.avatarCellRowHeight
         case 1..<3:
-            return InfoCellConstants.rowHeight
+            return Dimensions.infoCellRowHeight
         case 3:
             return rowHeight
         default:
@@ -81,7 +81,7 @@ class PokemonDetailsController: UIViewController, UITableViewDelegate {
     func calculateRowHeight() {
         let abilityCount = pokemonDetailsViewModel.pokemonDetails.abilities.count
         let multiplier = CGFloat((abilityCount + abilityCount % 2)/2)
-        rowHeight = multiplier * AbilitiesCellConstants.collectionViewRowHeight
+        rowHeight = multiplier * Dimensions.collectionViewRowHeight
         
     }
 }

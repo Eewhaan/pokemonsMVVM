@@ -17,7 +17,9 @@ class PokemonsViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = PokemonsVCConstants.title
+        navigationItem.title = TitlesAndStrings.pokemonsVCTitle
+        navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: TitlesAndStrings.logOutButton, style: .plain, target: self, action: #selector(logOut))
         callPokemonVMForUIUpdate()
         configureViews()
     }
@@ -26,6 +28,9 @@ class PokemonsViewController: UIViewController, UITableViewDelegate {
         if indexPath.row == updateIndex {
             self.pokemonsViewModel.fetchData()
         }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Dimensions.pokemonsVCRowHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,7 +49,7 @@ class PokemonsViewController: UIViewController, UITableViewDelegate {
     }
     
     func updateTableData() {
-        self.pokemonsTableDataSource = PokemonsTableDataSource(cellId: PokemonsVCConstants.cellId, items: self.pokemonsViewModel.pokemonsData, configureCell: { cell, pokemon in
+        self.pokemonsTableDataSource = PokemonsTableDataSource(cellId: Identifiers.pokemonCell, items: self.pokemonsViewModel.pokemonsData, configureCell: { cell, pokemon in
             cell.loadSetup(pokemon: pokemon)
         })
         
@@ -64,6 +69,13 @@ class PokemonsViewController: UIViewController, UITableViewDelegate {
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing)
         }
+    }
+    
+    @objc func logOut(sender: UIBarButtonItem) {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: TitlesAndStrings.defaultsKey)
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

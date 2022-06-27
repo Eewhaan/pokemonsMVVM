@@ -34,23 +34,23 @@ class PokemonsCell: UITableViewCell {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview().inset(PokemonsCellConstants.labelBottomAndLeadingInset)
+            make.leading.equalToSuperview().inset(OffsetsAndInsets.pokemonsLabelBottomAndLeadingInset)
             make.centerX.equalToSuperview()
         }
         
         detailLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).inset(PokemonsCellConstants.labelTopInset)
-            make.bottom.leading.equalToSuperview().inset(PokemonsCellConstants.labelBottomAndLeadingInset)
+            make.top.equalTo(nameLabel.snp.bottom).inset(OffsetsAndInsets.pokemonsLabelTopInset)
+            make.bottom.leading.equalToSuperview().inset(OffsetsAndInsets.pokemonsLabelBottomAndLeadingInset)
             make.width.lessThanOrEqualToSuperview()
         }
     }
     
     func loadSetup(pokemon: Pokemon) {
-        self.nameLabel.font = UIFont(name: PokemonsCellConstants.font, size: PokemonsCellConstants.nameFontSize)
-        self.detailLabel.font = UIFont(name: PokemonsCellConstants.font, size: PokemonsCellConstants.nameFontSize)
-        self.detailLabel.textColor = PokemonsCellConstants.detailTextColor
-        self.detailLabel.layer.backgroundColor = PokemonsCellConstants.detailBackgroundColor
-        self.detailLabel.layer.cornerRadius = PokemonsCellConstants.detailCornerRadius
+        self.nameLabel.font = UIFont(name: Fonts.basicFont, size: Dimensions.basicFontSize)
+        self.detailLabel.font = UIFont(name: Fonts.boldFont, size: Dimensions.detailFontSize)
+        self.detailLabel.textColor = Colors.detailTextColor
+        self.detailLabel.layer.backgroundColor = Colors.detailBackgroundColor
+        self.detailLabel.layer.cornerRadius = BorderAndCorners.pokemonsDetailCornerRadius
         
         self.detailLabel.text = pokemon.name.capitalized
         self.nameLabel.text = pokemon.name.capitalized
