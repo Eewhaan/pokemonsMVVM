@@ -18,7 +18,7 @@ class DataService {
         var components = URLComponents(string: urlString)
         if let perPage = perPage, let offset = offset {
             components?.queryItems = [
-                URLQueryItem(name: "per-page", value: "\(perPage)"),
+                URLQueryItem(name: "limit", value: "\(perPage)"),
                 URLQueryItem(name: "offset", value: "\(offset)")
             ]
         }

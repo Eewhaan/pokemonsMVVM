@@ -44,6 +44,9 @@
 		DBB7368E2864776400E6AD80 /* PokemonDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7368D2864776400E6AD80 /* PokemonDetailsDataSource.swift */; };
 		DBB736902864A6E800E6AD80 /* TableForPokemonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7368F2864A6E800E6AD80 /* TableForPokemonDetails.swift */; };
 		DBB736942865E3A400E6AD80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB736932865E3A400E6AD80 /* LoginViewController.swift */; };
+		DBFB8838286AFE1000B5617F /* PokemonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB8837286AFE1000B5617F /* PokemonsTests.swift */; };
+		DBFB883A286B057000B5617F /* PokemonDetailsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB8839286B057000B5617F /* PokemonDetailsModelTest.swift */; };
+		DBFB883C286B0A0E00B5617F /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB883B286B0A0E00B5617F /* LoginViewModelTest.swift */; };
 		EDEE3A69B03062C776B15FB8 /* Pods_pokemonsMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523FF37F5895338BD31CC422 /* Pods_pokemonsMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +115,9 @@
 		DBB7368D2864776400E6AD80 /* PokemonDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsDataSource.swift; sourceTree = "<group>"; };
 		DBB7368F2864A6E800E6AD80 /* TableForPokemonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableForPokemonDetails.swift; sourceTree = "<group>"; };
 		DBB736932865E3A400E6AD80 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DBFB8837286AFE1000B5617F /* PokemonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsTests.swift; sourceTree = "<group>"; };
+		DBFB8839286B057000B5617F /* PokemonDetailsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsModelTest.swift; sourceTree = "<group>"; };
+		DBFB883B286B0A0E00B5617F /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
 		DEEAC12A5123A189853EC20F /* Pods-pokemonsMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokemonsMVVMTests.debug.xcconfig"; path = "Target Support Files/Pods-pokemonsMVVMTests/Pods-pokemonsMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				DB24B31828631D4600351D0C /* pokemonsMVVMTests.swift */,
+				DBFB8837286AFE1000B5617F /* PokemonsTests.swift */,
+				DBFB8839286B057000B5617F /* PokemonDetailsModelTest.swift */,
+				DBFB883B286B0A0E00B5617F /* LoginViewModelTest.swift */,
 			);
 			path = pokemonsMVVMTests;
 			sourceTree = "<group>";
@@ -592,7 +601,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFB883C286B0A0E00B5617F /* LoginViewModelTest.swift in Sources */,
 				DB24B31928631D4600351D0C /* pokemonsMVVMTests.swift in Sources */,
+				DBFB883A286B057000B5617F /* PokemonDetailsModelTest.swift in Sources */,
+				DBFB8838286AFE1000B5617F /* PokemonsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
