@@ -58,8 +58,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let ac = UIAlertController(title: TitlesAndStrings.alertTitle, message: TitlesAndStrings.alertMessage, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: TitlesAndStrings.alertActionTitle, style: .default))
             self?.present(ac, animated: true)
+            self?.passwordTextField.text = nil
         }
-        self.passwordTextField.text = nil
     }
     
     func setupViews() {
