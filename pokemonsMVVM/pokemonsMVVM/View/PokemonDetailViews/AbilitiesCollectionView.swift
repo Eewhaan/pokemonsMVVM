@@ -12,6 +12,6 @@ class AbilitiesCollectionView: UICollectionView {
     func setup(parent: AbilitiesCell) {
         self.delegate = parent
         self.dataSource = parent
-        self.register(AbilitiesCVCell.self, forCellWithReuseIdentifier: AbilitiesCellConstants.collectionViewCellId)
+        self.register(AbilitiesCVCell.self, forCellWithReuseIdentifier: Identifiers.collectionViewCell)
     }
 }

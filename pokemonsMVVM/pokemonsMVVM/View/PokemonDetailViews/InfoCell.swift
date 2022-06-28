@@ -36,28 +36,28 @@ class InfoCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints{ make in
             make.top.bottom.equalToSuperview()
-            make.leading.equalToSuperview().inset(InfoCellConstants.leadingAndTrailingInset)
-            make.width.equalToSuperview().multipliedBy(InfoCellConstants.titleLabelMultiplier)
+            make.leading.equalToSuperview().inset(OffsetsAndInsets.infoCellLeadingAndTrailing)
+            make.width.equalToSuperview().multipliedBy(OffsetsAndInsets.infoCellTitleLabelMultiplier)
         }
         detailLabel.snp.makeConstraints { make in
             make.centerY.equalTo(titleLabel.snp.centerY)
-            make.trailing.equalToSuperview().inset(InfoCellConstants.leadingAndTrailingInset)
-            make.width.equalToSuperview().multipliedBy(InfoCellConstants.detailLabelMultiplier)
+            make.trailing.equalToSuperview().inset(OffsetsAndInsets.infoCellLeadingAndTrailing)
+            make.width.equalToSuperview().multipliedBy(OffsetsAndInsets.infoCellDetailLabelMultiplier)
         }
     }
     
     func loadSetup(details: PokemonDetails, index: Int) {
-        self.titleLabel.font = UIFont(name: InfoCellConstants.titleFont, size: InfoCellConstants.fontSize)
+        self.titleLabel.font = UIFont(name: Fonts.basicFont, size: Dimensions.basicFontSize)
         self.titleLabel.textAlignment = .left
-        self.detailLabel.font = UIFont(name: InfoCellConstants.detailFont, size: InfoCellConstants.fontSize)
+        self.detailLabel.font = UIFont(name: Fonts.boldFont, size: Dimensions.detailFontSize)
         self.detailLabel.textAlignment = .center
         
         switch index {
         case 1:
-            self.titleLabel.text = InfoCellConstants.nameString
+            self.titleLabel.text = TitlesAndStrings.nameLabel
             self.detailLabel.text = details.name.capitalized
         case 2:
-            self.titleLabel.text = InfoCellConstants.baseXpString
+            self.titleLabel.text = TitlesAndStrings.baseXpLabel
             self.detailLabel.text = String(describing: details.base_experience)
         default:
             break

@@ -11,9 +11,9 @@ class TableForPokemonDetails: UITableView {
     
     func setup(delegate: PokemonDetailsController) {
         self.delegate = delegate
-        self.register(AvatarCell.self, forCellReuseIdentifier: AvatarCellConstants.cellId)
-        self.register(InfoCell.self, forCellReuseIdentifier: InfoCellConstants.cellId)
-        self.register(AbilitiesCell.self, forCellReuseIdentifier: AbilitiesCellConstants.tableViewCellId)
+        self.register(AvatarCell.self, forCellReuseIdentifier: Identifiers.avatarCell)
+        self.register(InfoCell.self, forCellReuseIdentifier: Identifiers.infoCell)
+        self.register(AbilitiesCell.self, forCellReuseIdentifier: Identifiers.abilitiesCell)
     }
 
 }

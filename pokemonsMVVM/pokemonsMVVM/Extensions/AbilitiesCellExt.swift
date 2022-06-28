@@ -15,12 +15,12 @@ extension AbilitiesCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AbilitiesCellConstants.collectionViewCellId, for: indexPath) as? AbilitiesCVCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.collectionViewCell, for: indexPath) as? AbilitiesCVCell else { return UICollectionViewCell() }
         cell.loadSetup(abilities: self.abilities, index: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/AbilitiesCellConstants.divider, height: AbilitiesCellConstants.collectionViewRowHeight)
+        return CGSize(width: collectionView.frame.width/OffsetsAndInsets.divider, height: Dimensions.collectionViewCellHeight)
     }
 }

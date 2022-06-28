@@ -25,9 +25,10 @@ class PokemonsViewModel: NSObject {
     }
     
     func fetchData(completed: ((Bool)->Void)? = nil) {
-        DataService.shared.getPokemons(perPage: PokemonsViewModelConstants.numberOfPokemonsPerPage, offset: offset) { result in
+        DataService.shared.getData(perPage: PokemonsViewModelConstants.numberOfPokemonsPerPage, offset: offset, urlString: URLS.pokemonsURL, { (result: Result<Pokemons, APIError>) in
             switch result {
-            case .success(let pokemons):
+            case .success(let pokemonData):
+                let pokemons = pokemonData.results
                 self.pokemonsData.append(contentsOf: pokemons)
                 self.offset += PokemonsViewModelConstants.offsetIncreaseAmount
                 completed?(true)
@@ -35,8 +36,7 @@ class PokemonsViewModel: NSObject {
                 print(error.localizedDescription)
                 completed?(false)
             }
-        }
+        })
     }
     
-
 }

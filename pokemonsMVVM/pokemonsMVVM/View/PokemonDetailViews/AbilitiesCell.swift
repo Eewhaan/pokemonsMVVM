@@ -38,21 +38,21 @@ class AbilitiesCell: UITableViewCell {
         abilityLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(AbilitiesCellConstants.abilityLabelMultiplier)
+            make.width.equalToSuperview().multipliedBy(OffsetsAndInsets.abilityLabelMultiplier)
         }
         
         abilitiesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(abilityLabel.snp.bottom)
-            make.height.equalToSuperview().multipliedBy(AbilitiesCellConstants.collectionViewMultiplier)
+            make.height.equalToSuperview().multipliedBy(OffsetsAndInsets.collectionViewMultiplier)
             make.trailing.leading.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
     
     func loadSetup(abilities: [Ability]) {
-        self.abilityLabel.font = AbilitiesCellConstants.font
+        self.abilityLabel.font = UIFont(name: Fonts.basicFont, size: Dimensions.basicFontSize)
         self.abilityLabel.textAlignment = .center
-        self.abilityLabel.text = AbilitiesCellConstants.abilityLabelText
+        self.abilityLabel.text = TitlesAndStrings.abilities
         self.abilitiesCollectionView.setup(parent: self)
         self.abilities = abilities
     }

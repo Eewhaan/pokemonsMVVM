@@ -15,7 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let winScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: winScene)
-        let navController = UINavigationController(rootViewController: PokemonsViewController())
+        var rootVC = UIViewController()
+        let decodedData = DataService.shared.decodeData(type: UserData.self, key: TitlesAndStrings.defaultsKey)
+        if let _ = decodedData?.token {
+            rootVC = PokemonsViewController()
+        } else {
+            rootVC = LoginViewController()
+        }
+        let navController = UINavigationController(rootViewController: rootVC)
         window?.backgroundColor = UIColor.systemBackground
         window?.frame = UIScreen.main.bounds
         window?.rootViewController = navController
@@ -49,7 +56,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
 
 }
 
